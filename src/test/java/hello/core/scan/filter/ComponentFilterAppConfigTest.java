@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.context.annotation.ComponentScan.*;
 
-public class ComoponentFilterAppConfigTest {
+public class ComponentFilterAppConfigTest {
 
     @Test
     void filterScan(){
@@ -20,7 +20,6 @@ public class ComoponentFilterAppConfigTest {
         BeanA beanA = ac.getBean("beanA", BeanA.class);
         assertThat(beanA).isNotNull();
 
-        ac.getBean("beanB", BeanB.class);
          assertThrows(
                 NoSuchBeanDefinitionException.class,
                 () -> ac.getBean("beanB", BeanB.class));
